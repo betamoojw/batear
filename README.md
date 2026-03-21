@@ -72,7 +72,3 @@ batear/
     ├── CMakeLists.txt
     └── main.c
 ```
-
-## License
-
-MIT — see [LICENSE](LICENSE)
