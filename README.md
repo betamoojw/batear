@@ -5,15 +5,7 @@
   <p><strong>A sub-$15, edge-only acoustic drone detector on ESP32-S3.</strong></p>
 
 <p align="center">
-  <a href="https://hackaday.com/2026/03/23/acoustic-drone-detection-on-the-cheap-with-esp32/">
-    <img src="https://img.shields.io/badge/Featured%20on-Hackaday-black?logo=hackaday" alt="Featured on Hackaday" style="display:inline-block;">
-  </a>
-  <a href="https://github.com/TN666/batear/stargazers">
-    <img src="https://img.shields.io/github/stars/TN666/batear?style=flat-square" alt="Stars" style="display:inline-block;">
-  </a>
-  <a href="https://github.com/TN666/batear/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/TN666/batear?style=flat-square" alt="License" style="display:inline-block;">
-  </a>
+  <a href="https://hackaday.com/2026/03/23/acoustic-drone-detection-on-the-cheap-with-esp32/"><img src="https://img.shields.io/badge/Featured%20on-Hackaday-black?logo=hackaday" alt="Featured on Hackaday" style="display:inline-block;"></a><a href="https://github.com/TN666/batear/stargazers"><img src="https://img.shields.io/github/stars/TN666/batear?style=flat-square" alt="Stars" style="display:inline-block;"></a><a href="https://github.com/TN666/batear/blob/main/LICENSE"><img src="https://img.shields.io/github/license/TN666/batear?style=flat-square" alt="License" style="display:inline-block;"></a>
 </p>
 
   <br><br>
