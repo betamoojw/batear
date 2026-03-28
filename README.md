@@ -14,8 +14,8 @@
 <br><br>
 
 <div align="center">
-  <a href="https://youtu.be/Pwnvg_p4E5I">
-    <img src="https://img.youtube.com/vi/Pwnvg_p4E5I/0.jpg" alt="Batear Demo Video" width="600">
+  <a href="https://youtu.be/_OXP_MpExm8?si=sbgMLhAHPr7uCMk2">
+    <img src="https://img.youtube.com/vi/_OXP_MpExm8/0.jpg" alt="Batear Demo Video" width="600">
   </a>
   <br><br>
   <em>▶️ Click to watch the bench test demo</em>
