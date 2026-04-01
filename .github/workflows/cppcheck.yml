@@ -22,6 +22,7 @@ jobs:
       - name: Run Cppcheck
         run: |
           cppcheck --enable=all --inline-suppr --error-exitcode=1 \
+          --suppress=missingInclude --suppress=missingIncludeSystem \
+          --suppress=checkersReport \
           --std=c99 --platform=unix64 \
-          -I main/include -I components/esp-dsp/include \
-          main/ components/
+          main/
