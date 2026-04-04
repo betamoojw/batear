@@ -363,11 +363,7 @@
     }
 
     function buildNvsBlob(appKeyHex) {
-      if (nvsUrl) URL.revokeObjectURL(nvsUrl);
-      nvsUrl = null;
-
       const appKey = hexToBytes(appKeyHex);
-      /* DevEUI: use 8 zero bytes as placeholder — firmware derives from MAC */
       const devEui = new Uint8Array(8);
       const nvsImage = generateNvsImage(devEui, appKey);
       nvsUrl = URL.createObjectURL(new Blob([nvsImage], { type: "application/octet-stream" }));
@@ -376,13 +372,12 @@
 
     /* ---- Manifest building ---- */
 
-    function makeManifest(name, tag, role) {
+    function makeManifest(name, tag, role, nvsPartUrl) {
       const fwPath = `${pageBase}firmware/${tag}/merged_${role}.bin`;
       const parts = [{ path: fwPath, offset: 0 }];
 
-      const validKey = getValidKey();
-      if (validKey) {
-        parts.push({ path: buildNvsBlob(validKey), offset: NVS_OFFSET });
+      if (nvsPartUrl) {
+        parts.push({ path: nvsPartUrl, offset: NVS_OFFSET });
       }
 
       return URL.createObjectURL(new Blob([JSON.stringify({
@@ -395,10 +390,14 @@
     function updateManifests() {
       if (manifestUrls.det) URL.revokeObjectURL(manifestUrls.det);
       if (manifestUrls.gw)  URL.revokeObjectURL(manifestUrls.gw);
+      if (nvsUrl) { URL.revokeObjectURL(nvsUrl); nvsUrl = null; }
 
       const tag = select.value;
-      manifestUrls.det = makeManifest("Detector " + tag, tag, "detector");
-      manifestUrls.gw  = makeManifest("Gateway " + tag, tag, "gateway");
+      const validKey = getValidKey();
+      const currentNvsUrl = validKey ? buildNvsBlob(validKey) : null;
+
+      manifestUrls.det = makeManifest("Detector " + tag, tag, "detector", currentNvsUrl);
+      manifestUrls.gw  = makeManifest("Gateway " + tag, tag, "gateway", currentNvsUrl);
       btnDet.setAttribute("manifest", manifestUrls.det);
       btnGw.setAttribute("manifest", manifestUrls.gw);
     }
