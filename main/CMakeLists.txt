@@ -20,7 +20,7 @@ idf_component_register(
         esp_wifi
         esp_netif
         esp_event
-        mqtt
+        espressif__mqtt
         espressif__esp-dsp
         jgromes__radiolib
         mbedtls
