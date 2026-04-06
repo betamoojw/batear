@@ -1,4 +1,4 @@
-set(SRCS "main.cpp" "EspIdfHal.cpp" "lorawan_provision.c")
+set(SRCS "main.cpp" "EspIdfHal.cpp" "lorawan_provision.c" "config_console.c")
 
 if(CONFIG_BATEAR_ROLE_DETECTOR)
     list(APPEND SRCS "audio_task.c" "audio_processor.c" "lora_task.cpp")
@@ -20,11 +20,12 @@ idf_component_register(
         esp_wifi
         esp_netif
         esp_event
-        espressif__mqtt
+        mqtt
         espressif__esp-dsp
         jgromes__radiolib
         mbedtls
         nvs_flash
+        console
 )
 
 # Suppress RadioLib upstream warnings about overloaded virtuals (C++ only)

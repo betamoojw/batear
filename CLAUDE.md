@@ -71,6 +71,7 @@ batear/
 │   ├── drone_detector.h        # shared DroneEvent_t + queue
 │   ├── lora_crypto.h           # AES-128-GCM packet protocol (PSA API)
 │   ├── EspIdfHal.cpp/.h        # RadioLib HAL for ESP-IDF
+│   ├── config_console.c/.h     # serial console (show/set/reboot)
 │   ├── audio_processor.c/.h    # [detector] ESP-DSP FFT + PSD + harmonic analysis
 │   ├── audio_task.c/.h         # [detector] I2S mic + detection state machine
 │   ├── lora_task.cpp/.h        # [detector] LoRa TX
